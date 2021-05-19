@@ -6,6 +6,7 @@ export function handleNewGravatar(event: NewGravatar): void {
   gravatar.owner = event.params.owner
   gravatar.displayName = event.params.displayName
   gravatar.imageUrl = event.params.imageUrl
+  gravatar.transaction = event.transaction.from.toHex()
   gravatar.save()
 }
 
@@ -18,5 +19,6 @@ export function handleUpdatedGravatar(event: UpdatedGravatar): void {
   gravatar.owner = event.params.owner
   gravatar.displayName = event.params.displayName
   gravatar.imageUrl = event.params.imageUrl
+  gravatar.transaction = event.transaction.from.toHex()
   gravatar.save()
 }
